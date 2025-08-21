@@ -206,3 +206,8 @@ button:active {
   font-size: 13px;
   margin: 6px 0 0;
 }
+
+.footer-subtext a {
+  color: #ffffff;
+  text-decoration: none;
+}
