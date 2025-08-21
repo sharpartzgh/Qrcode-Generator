@@ -216,3 +216,10 @@ button:active {
 .footer-subtext a:hover {
   text-decoration: underline;
 }
+
+.github-star {
+  margin-top: 10px;
+}
+.github-button {
+  font-family: inherit;
+}
