@@ -1,0 +1,208 @@
+:root {
+  --bg: #f9fafb;
+  --text: #0b1220;
+  --muted: #64748b;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --primary: #4f46e5;
+  --primary-2: #8b5cf6;
+  --shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #9aa5b1;
+  --card: #111827;
+  --border: #1f2937;
+  --primary: #6366f1;
+  --primary-2: #8b5cf6;
+  --shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.12), transparent 50%), var(--bg);
+  color: var(--text);
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  text-align: center;
+  padding: 3.2rem 1rem 2.2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white;
+  position: relative;
+  padding-bottom: 40px;
+}
+header .waves { 
+  position:absolute; inset:0; opacity:.12; 
+  background: radial-gradient(600px 180px at 20% 10%, #fff, transparent), radial-gradient(600px 180px at 80% 0%, #fff, transparent); 
+  pointer-events:none; 
+}
+header h1 { font-size: clamp(1.8rem, 3.2vw, 2.8rem); 
+  margin: 0 0 .6rem; 
+  letter-spacing: .4px; 
+}
+header p { 
+  margin: 0; 
+  opacity: .95; 
+}
+
+.toolbar { 
+  position: fixed; top: 12px; right: 12px; display: flex; gap: 8px; z-index: 10; 
+}
+
+.chip {
+  background: var(--card); 
+  color: var(--text); 
+  border: 1px solid var(--border);
+  border-radius: 9999px; 
+  padding: 8px 12px; 
+  box-shadow: var(--shadow);
+  cursor: pointer; 
+  font-weight: 600; 
+  font-size: 14px;
+}
+
+.container { 
+  flex: 1; 
+  display: grid; 
+  place-items: center; 
+  padding: 28px; 
+}
+
+.card {
+  width: 100%; 
+  max-width: 880px; 
+  display: grid; gap: 18px; 
+  grid-template-columns: 1.1fr .9fr;
+  background: var(--card); 
+  border: 1px solid var(--border); 
+  border-radius: 16px; 
+  padding: 18px; 
+  box-shadow: var(--shadow);
+}
+@media (max-width: 860px) { .card { grid-template-columns: 1fr; } }
+
+.panel { 
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; padding: 14px; 
+}
+
+label { 
+  display:block; 
+  font-size: 13px; 
+  color: var(--muted); 
+  margin: 4px 0 6px;
+ }
+
+input, select {
+  width: 100%; padding: 12px 14px; 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  background: rgba(255,255,255,.04);
+  color: var(--text); 
+  outline: none; 
+  transition: border .2s, box-shadow .2s;
+}
+input:focus, select:focus { 
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99,102,241,.18); 
+}
+
+.row { 
+  display:grid; 
+  grid-template-columns: repeat(2,minmax(0,1fr));
+   gap: 10px; 
+  }
+
+.actions { 
+  display:flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin-top: 10px; 
+}
+
+button {
+  appearance: none; 
+  border: 0; 
+  padding: 10px 14px; 
+  border-radius: 12px; 
+  font-weight: 700; 
+  cursor: pointer;
+  background: linear-gradient(180deg, var(--primary), #4f84f4); color: #fff; 
+  box-shadow: var(--shadow);
+  transition: transform .06s ease, filter .2s ease;
+}
+button.secondary {
+  background: linear-gradient(180deg, #334155, #1f2937); 
+  color: #e5e7eb; }
+button.ghost { 
+  background: transparent; 
+  color: var(--text); 
+  border: 1px dashed var(--border); 
+}
+
+button:active { 
+  transform: translateY(1px); 
+}
+
+.qr-area { 
+  display:grid; 
+  place-items:center; 
+  min-height: 360px; 
+  padding: 10px; 
+}
+
+.qr-box { 
+  background:#fff; 
+  padding:12px; 
+  border-radius:12px; 
+  box-shadow: 0 8px 30px rgba(0,0,0,.24); 
+}
+
+.statusbar { 
+  display:flex; 
+  justify-content: space-between; 
+  align-items:center; 
+  gap: 12px; 
+  padding: 10px 2px; 
+  font-size: 12px; 
+  color: var(--muted); 
+}
+
+.footer {
+  position: relative;
+  padding: 20px 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  color: #ffffff; 
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-subtext {
+  color: #ffffff;
+  font-size: 13px;
+  margin: 6px 0 0;
+}

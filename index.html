@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4f46e5" id="theme-color" />
+  <link rel="stylesheet" href="styles.css">
+  <title>QR Code Generator</title>
+</head>
+<body>
+  <div class="toolbar">
+    <button id="themeToggle" class="chip" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
+
+  <header>
+    <div class="waves" aria-hidden="true"></div>
+    <h1>QR Code Generator</h1>
+    <p>Create & download QR codes instantly.</p>
+  </header>
+
+  <main class="container">
+    <section class="card" role="application" aria-label="QR Generator">
+      <div class="panel">
+        <label for="qrText">Text or URL</label>
+        <input id="qrText" type="text" placeholder="e.g. https://www.github.com/sharpartzgh" autocomplete="on" />
+
+        <div class="row">
+          <div>
+            <label for="qrSize">Size</label>
+            <select id="qrSize">
+              <option value="160">160 × 160</option>
+              <option value="240" selected>240 × 240</option>
+              <option value="320">320 × 320</option>
+              <option value="400">400 × 400</option>
+            </select>
+          </div>
+          <div>
+            <label for="qrEC">Select Correction</label>
+            <select id="qrEC">
+              <option value="L">Low (L)</option>
+              <option value="M" selected>Medium (M)</option>
+              <option value="Q">Quartile (Q)</option>
+              <option value="H">High (H)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="generateBtn">Generate</button>
+          <button id="downloadBtn" class="secondary" disabled>Download PNG</button>
+          <button id="clearBtn" class="ghost">Clear</button>
+        </div>
+
+        <div class="statusbar">
+          <span id="status">Ready.</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="qr-area">
+          <div id="qrcode" class="qr-box" aria-live="polite" aria-atomic="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">
+        © <span id="year"></span>
+      </p>
+      <p class="footer-subtext">
+        Built with ❤️ by <span>Sharpartzgh</span>
+      </p>
+    </div>
+  </footer>
+  
+  
+
+
+  <!-- QR library -->
+  <script id="qrcode-lib"  src=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+  <!-- <noscript>
+    <p style="color:#fff; text-align:center; padding:12px">This page requires JavaScript to generate QR codes.</p>
+  </noscript> -->
+</body>
+</html>
