@@ -210,4 +210,9 @@ button:active {
 .footer-subtext a {
   color: #ffffff;
   text-decoration: none;
+  
+}
+
+.footer-subtext a:hover {
+  text-decoration: underline;
 }
