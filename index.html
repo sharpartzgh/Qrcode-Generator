@@ -112,7 +112,47 @@
 
     <section class="glass-card" role="application" aria-label="QR Generator">
       <div class="controls-panel">
-        <div class="input-group">
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="url">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            URL / Text
+          </button>
+          <button class="tab-btn" data-tab="wifi">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+              <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            WiFi
+          </button>
+          <button class="tab-btn" data-tab="vcard">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Contact
+          </button>
+          <button class="tab-btn" data-tab="email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Email
+          </button>
+        </div>
+
+        <!-- Form: URL/Text -->
+        <div class="input-group tab-content active" id="tab-url">
           <label for="qrText">Content</label>
           <div class="input-wrapper">
             <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -125,6 +165,86 @@
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
             </svg>
             <input id="qrText" type="text" placeholder="Enter URL or text..." autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- Form: WiFi -->
+        <div class="tab-content" id="tab-wifi">
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="wifiSSID">Network Name (SSID)</label>
+              <input id="wifiSSID" type="text" placeholder="MyNetwork" />
+            </div>
+            <div class="input-group">
+              <label for="wifiPass">Password</label>
+              <input id="wifiPass" type="password" placeholder="Password" />
+            </div>
+            <div class="input-group full-width">
+              <label for="wifiType">Encryption</label>
+              <div class="select-wrapper">
+                <select id="wifiType">
+                  <option value="WPA">WPA/WPA2</option>
+                  <option value="WEP">WEP</option>
+                  <option value="nopass">No Password</option>
+                </select>
+                <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="input-group full-width checkbox-group">
+              <input type="checkbox" id="wifiHidden">
+              <label for="wifiHidden">Hidden Network</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form: vCard -->
+        <div class="tab-content" id="tab-vcard">
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="vcFirst">First Name</label>
+              <input id="vcFirst" type="text" placeholder="John" />
+            </div>
+            <div class="input-group">
+              <label for="vcLast">Last Name</label>
+              <input id="vcLast" type="text" placeholder="Doe" />
+            </div>
+            <div class="input-group">
+              <label for="vcPhone">Phone</label>
+              <input id="vcPhone" type="tel" placeholder="+1 234 567 890" />
+            </div>
+            <div class="input-group">
+              <label for="vcEmail">Email</label>
+              <input id="vcEmail" type="email" placeholder="john@example.com" />
+            </div>
+            <div class="input-group full-width">
+              <label for="vcOrg">Organization</label>
+              <input id="vcOrg" type="text" placeholder="Company Inc." />
+            </div>
+            <div class="input-group full-width">
+              <label for="vcTitle">Job Title</label>
+              <input id="vcTitle" type="text" placeholder="Manager" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Form: Email -->
+        <div class="tab-content" id="tab-email">
+          <div class="form-grid">
+            <div class="input-group full-width">
+              <label for="emailAddr">Email Address</label>
+              <input id="emailAddr" type="email" placeholder="recipient@example.com" />
+            </div>
+            <div class="input-group full-width">
+              <label for="emailSub">Subject</label>
+              <input id="emailSub" type="text" placeholder="Hello" />
+            </div>
+            <div class="input-group full-width">
+              <label for="emailBody">Message</label>
+              <textarea id="emailBody" rows="3" placeholder="Type your message..."></textarea>
+            </div>
           </div>
         </div>
 
