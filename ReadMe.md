@@ -1,48 +1,45 @@
-# Free QR Code Generator
+# QR Gen - Premium QR Code Generator
 
-A fast, clean, and free **QR Code Generator** built with vanilla **HTML, CSS, and JavaScript**.  
-Create QR codes instantly for URLs, text, and more — then download them as PNG files.
+A fast, modern, and free **QR Code Generator** featuring a stunning glassmorphism design.  
+Create custom QR codes instantly for URLs, text, and more — then download them as PNG files.
 
 ## ✨ Features
-- 🔗 Generate QR codes for any text or URL  
-- 📏 Adjustable sizes (160px – 400px)  
-- 🎯 Custom error correction levels (L, M, Q, H)  
-- 🌙 Light/Dark mode toggle (saved in localStorage)  
-- 📥 Download QR codes as PNG images  
-- ⚡ Works offline (no backend required)
+- 🎨 **Modern UI/UX**: Glassmorphism aesthetic with vibrant gradients and smooth animations.
+- 🌓 **Dark/Light Mode**: Seamless theme switching with persistent preference.
+- 📱 **Fully Responsive**: Optimized for all devices, from mobile to desktop.
+- ⚡ **Instant Generation**: Real-time QR code creation using `QRCode.js`.
+- 📥 **High-Quality Downloads**: Export your QR codes as PNG images.
+- 🛠 **Customizable**: Adjust size (160px – 400px) and error correction levels.
 
-## 🚀 Live
-👉 [Live](https://sharpartzgh.github.io/Qrcode-Generator/)  
+## 🚀 Live Demo
+👉 [Launch App](index.html)
 
-## 📖 Usage
+## � Screenshots
 
-- Enter text or a URL in the input field
+### Light Mode
+The default view features a bright, airy design with soft shadows and a colorful background.
+![Light Mode](screenshot-light.png)
 
-- Select QR code size and error correction level
+### Dark Mode
+Sleek, high-contrast interface that is easy on the eyes.
+![Dark Mode](screenshot-dark.png)
 
-- Click Generate
-
-- Download your QR code as a PNG or clear to start over
-
-## 📷 Screenshot
-
-- Mobile
-![QR Code Generator Screenshot](screenshot-mobile.png)
-
-- Desktop
-![QR Code Generator Screenshot](screenshot-desktop.png)
+### Generated QR Code
+Smooth pop-in animation for generated codes.
+![Generated QR Code](screenshot-generated.png)
 
 ## 🔧 Technologies
+- **HTML5**: Semantic structure.
+- **CSS3**: Vanilla CSS with custom properties (variables) for theming and glassmorphism.
+- **JavaScript**: ES6+ for logic and DOM manipulation.
+- **Library**: [QRCode.js](https://github.com/davidshimjs/qrcodejs) for QR rendering.
+- **Font**: [Outfit](https://fonts.google.com/specimen/Outfit) from Google Fonts.
 
-- HTML5
-
-- CSS3 (Vanilla, responsive)
-
-- JavaScript (ES6+)
-
--  library for QR rendering [QRCode.js](https://github.com/davidshimjs/qrcodejs)
-
-
+## 📖 Usage
+1. **Enter Content**: Type your URL or text in the input field.
+2. **Customize**: Select your preferred size and error correction level.
+3. **Generate**: Click the "Generate QR Code" button.
+4. **Download**: Save your QR code as a PNG file.
 
 ## Built with ❤️ by Sharpartzgh.
 
