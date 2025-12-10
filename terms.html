@@ -1,56 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Use - Free QR Code Generator</title>
-  <link rel="freeQrCode icon" href="/favicon.png" type="image/x-icon">
+  <title>Terms of Use - QR Gen</title>
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <h1>Terms of Use</h1>
-    <p>Last updated: January 2025</p>
-  </header>
 
-  <main class="container">
-    <section class="card">
-      <div class="panel">
-        <h2>1. Acceptance of Terms</h2>
-        <p>
-          By using this QR Code Generator (“Service”), you agree to comply with these Terms of Use. 
+<body>
+  <div class="background-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo" style="text-decoration: none;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <path d="M3 14h7v7H3z"></path>
+      </svg>
+      <span>QR Gen</span>
+    </a>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="main-content">
+    <header class="hero" style="margin-bottom: 2rem;">
+      <h1>Terms of <span class="gradient-text">Use</span></h1>
+      <p>Last updated: January 2025</p>
+    </header>
+
+    <section class="glass-card" style="display: block; max-width: 800px;">
+      <div class="content-panel" style="line-height: 1.6;">
+        <h2 style="margin-bottom: 1rem; color: var(--primary);">1. Acceptance of Terms</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+          By using this QR Code Generator (“Service”), you agree to comply with these Terms of Use.
           If you do not agree, please discontinue using the Service.
         </p>
 
-        <h2>2. Use of Service</h2>
-        <p>
-          This Service is provided for personal and business use. You may generate QR codes for 
-          links, text, or other data. You agree not to misuse the Service for illegal activities, 
+        <h2 style="margin-bottom: 1rem; color: var(--primary);">2. Use of Service</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+          This Service is provided for personal and business use. You may generate QR codes for
+          links, text, or other data. You agree not to misuse the Service for illegal activities,
           spamming, or distributing harmful content.
         </p>
 
-        <h2>3. Intellectual Property</h2>
-        <p>
-          All design, branding, and code are the property of the developer (Sharpartzgh). 
+        <h2 style="margin-bottom: 1rem; color: var(--primary);">3. Intellectual Property</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+          All design, branding, and code are the property of the developer (Sharpartzgh).
           You may not reproduce, redistribute, or sell the Service without permission.
         </p>
 
-        <h2>4. Disclaimer of Warranties</h2>
-        <p>
-          This Service is provided “as is” without warranties of any kind. 
-          We do not guarantee that the generated QR codes will work in every situation 
+        <h2 style="margin-bottom: 1rem; color: var(--primary);">4. Disclaimer of Warranties</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+          This Service is provided “as is” without warranties of any kind.
+          We do not guarantee that the generated QR codes will work in every situation
           or with every scanner.
         </p>
 
-        <h2>5. Limitation of Liability</h2>
-        <p>
-          In no event shall the developer be held liable for any damages arising from the 
+        <h2 style="margin-bottom: 1rem; color: var(--primary);">5. Limitation of Liability</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+          In no event shall the developer be held liable for any damages arising from the
           use or inability to use this Service.
         </p>
 
-        <h2>6. Changes to Terms</h2>
-        <p>
-          We reserve the right to update these Terms of Use at any time. 
+        <h2 style="margin-bottom: 1rem; color: var(--primary);">6. Changes to Terms</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+          We reserve the right to update these Terms of Use at any time.
           Continued use of the Service after changes means you accept the new terms.
         </p>
       </div>
@@ -58,33 +103,19 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-container">
-      <p class="footer-text">
-        © <span id="year"></span> QR Code Generator
-      </p>
-      <p class="footer-subtext">
-        Built with ❤️ by <a class="sharp" href="http://githib.com/sharpartzgh">Sharpartzgh</a>
-      </p>
-      <p class="footer-subtext">
-        <a href="index.html">Home</a> | 
-        <a href="terms.html">Terms of Use</a> | 
-        <a href="privacy.html">Privacy Policy</a>
-      </p>
-      <div class="footer-subtext">
-        <a class="github-button"
-           href="https://github.com/sharpartzgh/Qrcode-Generator"
-           data-icon="octicon-star"
-           data-show-count="true"
-           aria-label="Star sharpartzgh/Qrcode-Generator on GitHub">
-            Star on GitHub
-        </a>
-      </div>
+    <p>© <span id="year"></span> QR Gen. Built by <a href="https://github.com/sharpartzgh" target="_blank"
+        rel="noopener">Sharpartzgh</a>.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
     </div>
   </footer>
-  
 
+  <script src="script.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
