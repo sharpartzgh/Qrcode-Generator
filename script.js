@@ -216,19 +216,19 @@
 
 // --- Theme Initialization ---
 
-(function initTheme(){
+(function initTheme() {
   try {
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const dark = saved ? saved === 'dark' : prefersDark;
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  } catch(_) {}
+  } catch (_) { }
 })();
 
 // --- Ensure QR library present with CDN fallback ---
-(function bootstrapQRCode(){
+(function bootstrapQRCode() {
   const primary = document.getElementById('qrcode-lib');
-  function injectFallback(){
+  function injectFallback() {
     if (window.QRCode) return Promise.resolve();
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -239,18 +239,18 @@
       document.head.appendChild(s);
     });
   }
-  window.__ensureQRCodeLib = function(){
+  window.__ensureQRCodeLib = function () {
     if (window.QRCode) return Promise.resolve();
     return new Promise((resolve) => {
       const timer = setTimeout(async () => { try { await injectFallback(); } finally { resolve(); } }, 1200);
-      primary.addEventListener('load', () => { clearTimeout(timer); resolve(); }, { once:true });
-      primary.addEventListener('error', async () => { clearTimeout(timer); await injectFallback(); resolve(); }, { once:true });
+      primary.addEventListener('load', () => { clearTimeout(timer); resolve(); }, { once: true });
+      primary.addEventListener('error', async () => { clearTimeout(timer); await injectFallback(); resolve(); }, { once: true });
     });
   }
 })();
 
 // --- logic ---
-(function app(){
+(function app() {
   const el = {
     text: document.getElementById('qrText'),
     size: document.getElementById('qrSize'),
@@ -264,12 +264,12 @@
     themeMeta: document.getElementById('theme-color'),
   };
 
-  function setStatus(msg=''){ el.status.textContent = msg; }
-  function setTheme(dark){
+  function setStatus(msg = '') { el.status.textContent = msg; }
+  function setTheme(dark) {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-    el.themeToggle.textContent = dark ? '🌙':'☀️';
-    el.themeMeta && (el.themeMeta.setAttribute('content', dark ? '#0b1220' : '#4f46e5'));
-    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch(_) {}
+    // el.themeToggle.textContent = dark ? '🌙':'☀️'; // Removed: using CSS icons now
+    el.themeMeta && (el.themeMeta.setAttribute('content', dark ? '#0f172a' : '#6366f1'));
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (_) { }
   }
 
   // Init theme button label
@@ -282,15 +282,15 @@
   function correctLevelFrom(value) {
     const CL = window.QRCode?.CorrectLevel;
     if (CL) return CL[value] ?? CL.M;
-    return {L:1,M:2,Q:3,H:4}[value] ?? 2;
+    return { L: 1, M: 2, Q: 3, H: 4 }[value] ?? 2;
   }
 
-  function resetQR(){
+  function resetQR() {
     el.box.innerHTML = '';
     el.download.disabled = true;
   }
 
-  async function generateQR(){
+  async function generateQR() {
     const text = el.text.value.trim();
     if (!text) { setStatus('Enter text or a URL to generate a code.'); resetQR(); return; }
     setStatus('Loading QR library…');
@@ -307,7 +307,7 @@
     requestAnimationFrame(() => { el.download.disabled = false; setStatus('Ready.'); });
   }
 
-  function downloadPNG(){
+  function downloadPNG() {
     const node = el.box.querySelector('canvas, img');
     if (!node) return;
     let data = '';
@@ -318,13 +318,13 @@
     document.body.appendChild(a); a.click(); a.remove();
   }
 
-  function clearAll(){ el.text.value=''; resetQR(); setStatus('Cleared.'); el.text.focus(); }
+  function clearAll() { el.text.value = ''; resetQR(); setStatus('Cleared.'); el.text.focus(); }
 
   // Events
-  el.generate.addEventListener('click', (e)=>{ e.preventDefault(); generateQR(); });
-  el.download.addEventListener('click', (e)=>{ e.preventDefault(); downloadPNG(); });
-  el.clear.addEventListener('click', (e)=>{ e.preventDefault(); clearAll(); });
-  el.text.addEventListener('keydown', (e)=>{ if (e.key === 'Enter') { e.preventDefault(); generateQR(); } });
+  el.generate.addEventListener('click', (e) => { e.preventDefault(); generateQR(); });
+  el.download.addEventListener('click', (e) => { e.preventDefault(); downloadPNG(); });
+  el.clear.addEventListener('click', (e) => { e.preventDefault(); clearAll(); });
+  el.text.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); generateQR(); } });
 
   // Focus input on ready
   window.addEventListener('DOMContentLoaded', () => el.text.focus());

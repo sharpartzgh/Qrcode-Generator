@@ -3,128 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#4f46e5" id="theme-color" />
+  <meta name="theme-color" content="#6366f1" id="theme-color" />
   <meta name="description" content="Create free custom QR codes instantly. Download PNG QR codes for websites, text, and more. Built by Sharpartzgh.">
   <meta name="keywords" content="QR code generator, free QR code, create QR code, download QR, online QR tool">
-  <meta name="description" content="Create and download QR codes instantly. Free, simple, and secure QR Code Generator that works directly in your browser.">
   <meta name="author" content="Sharpartzgh">
-   <link rel="freeQrCode icon" href="/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
-  <title>Free QR Code Generator - Instant QR Codes Online</title>
+  <title>QR Gen | Premium QR Code Generator</title>
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Sharpartzgh QR Code Generator",
-      "url": "https://yourdomain.com",
+      "name": "QR Gen",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "All",
-      "description": "Create and download QR codes instantly. Free online QR Code Generator built by Sharpartzgh."
+      "description": "Create and download QR codes instantly. Free online QR Code Generator."
     }
   </script>
-    
 </head>
 <body>
-  <div class="toolbar">
-    <button id="themeToggle" class="chip" aria-label="Toggle dark mode">Dark Mode</button>
+  <div class="background-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
   </div>
 
-  <header>
-    <div class="waves" aria-hidden="true"></div>
-    <h1>QR Code Generator</h1>
-    <p>Create & download QR codes instantly.</p>
-  </header>
+  <nav class="navbar">
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><path d="M3 14h7v7H3z"></path></svg>
+      <span>QR Gen</span>
+    </div>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+  </nav>
 
-  <main class="container">
-    <section class="card" role="application" aria-label="QR Generator">
-      <div class="panel">
-        <label for="qrText">Text or URL</label>
-        <input id="qrText" type="text" placeholder="e.g. https://www.github.com/sharpartzgh" autocomplete="on" />
+  <main class="main-content">
+    <header class="hero">
+      <h1>Generate QR Codes <br><span class="gradient-text">Instantly & Free</span></h1>
+      <p>Simple, fast, and secure. Create custom QR codes for your links, text, and more.</p>
+    </header>
 
-        <div class="row">
-          <div>
-            <label for="qrSize">Size</label>
-            <select id="qrSize">
-              <option value="160">160 × 160</option>
-              <option value="240" selected>240 × 240</option>
-              <option value="320">320 × 320</option>
-              <option value="400">400 × 400</option>
-            </select>
+    <section class="glass-card" role="application" aria-label="QR Generator">
+      <div class="controls-panel">
+        <div class="input-group">
+          <label for="qrText">Content</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><link x1="10" y1="13" x2="8" y2="13"></link><link x1="6" y1="13" x2="4" y2="13"></link><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <input id="qrText" type="text" placeholder="Enter URL or text..." autocomplete="off" />
           </div>
-          <div>
-            <label for="qrEC">Select Correction</label>
-            <select id="qrEC">
-              <option value="L">Low (L)</option>
-              <option value="M" selected>Medium (M)</option>
-              <option value="Q">Quartile (Q)</option>
-              <option value="H">High (H)</option>
-            </select>
+        </div>
+
+        <div class="options-row">
+          <div class="input-group">
+            <label for="qrSize">Size</label>
+            <div class="select-wrapper">
+              <select id="qrSize">
+                <option value="160">Small (160px)</option>
+                <option value="240" selected>Medium (240px)</option>
+                <option value="320">Large (320px)</option>
+                <option value="400">Extra Large (400px)</option>
+              </select>
+              <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="qrEC">Error Correction</label>
+            <div class="select-wrapper">
+              <select id="qrEC">
+                <option value="L">Low (7%)</option>
+                <option value="M" selected>Medium (15%)</option>
+                <option value="Q">Quartile (25%)</option>
+                <option value="H">High (30%)</option>
+              </select>
+              <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
           </div>
         </div>
 
         <div class="actions">
-          <button id="generateBtn">Generate</button>
-          <button id="downloadBtn" class="secondary" disabled>Download PNG</button>
-          <button id="clearBtn" class="ghost">Clear</button>
+          <button id="generateBtn" class="btn btn-primary">
+            <span>Generate QR Code</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          </button>
+          <button id="downloadBtn" class="btn btn-secondary" disabled>
+            <span>Download PNG</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </button>
+          <button id="clearBtn" class="btn btn-ghost" aria-label="Clear input">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          </button>
         </div>
-
+        
         <div class="statusbar">
-          <span id="status">Ready.</span>
+          <span id="status">Ready to generate.</span>
         </div>
       </div>
 
-      <div class="panel">
+      <div class="preview-panel">
         <div class="qr-area">
-          <div id="qrcode" class="qr-box" aria-live="polite" aria-atomic="true"></div>
+          <div id="qrcode" class="qr-box"></div>
+          <div class="qr-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="3" height="3"></rect><rect x="14" y="7" width="3" height="3"></rect><rect x="7" y="14" width="3" height="3"></rect><rect x="14" y="14" width="3" height="3"></rect></svg>
+            <p>Your QR code will appear here</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  
-  <!-- footer -->
-
   <footer class="footer">
-    <div class="footer-container">
-      <p class="footer-text">
-        © <span id="year"></span> QR Code Generator
-      </p>
-      <p class="footer-subtext">
-        Built with ❤️ by <a class="sharp" href="http://githib.com/sharpartzgh">Sharpartzgh</a>
-      </p>
-      <p class="footer-subtext">
-        <a href="index.html">Home</a> | 
-        <a href="terms.html">Terms of Use</a> | 
-        <a href="privacy.html">Privacy Policy</a>
-      </p>
-      <div class="footer-subtext">
-        <a class="github-button"
-           href="https://github.com/sharpartzgh/Qrcode-Generator"
-           data-icon="octicon-star"
-           data-show-count="true"
-           aria-label="Star yourusername/your-repo on GitHub">
-            Star on GitHub
-        </a>
-      </div>
+    <p>© <span id="year"></span> QR Gen. Built by <a href="https://github.com/sharpartzgh" target="_blank" rel="noopener">Sharpartzgh</a>.</p>
+    <div class="footer-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/sharpartzgh/Qrcode-Generator" target="_blank" rel="noopener" aria-label="Star on GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        Star
+      </a>
     </div>
   </footer>
-  
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  
-  
 
-
-  <!-- QR library -->
-  <script id="qrcode-lib"  src=""></script>
+  <script id="qrcode-lib" src=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous"></script>
-    
   <script src="script.js"></script>
-  <!-- <noscript>
-    <p style="color:#fff; text-align:center; padding:12px">This page requires JavaScript to generate QR codes.</p>
-  </noscript> -->
 </body>
 </html>
