@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sharpartzgh.github.io/Qrcode-Generator/sitemap.xml
